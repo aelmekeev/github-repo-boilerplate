@@ -2,6 +2,19 @@
 
 This repository allows to create a repository with the default configuration.
 
+## Triggering from github
+
+[![Creation](https://github.com/aelmekeev/github-repo-boilerplate/actions/workflows/apply.yml/badge.svg?branch=main)](https://github.com/aelmekeev/github-repo-boilerplate/actions/workflows/apply.yml)
+
+You can easily trigger repository creation from github web UI:
+
+1. Open [terraform.tfvars](https://github.com/aelmekeev/github-repo-boilerplate/blob/main/terraform.tfvars).
+2. Click on `Edit this file`.
+3. Change `name` of the repository (and other parameters if needed).
+4. Commit the change.
+
+Repository will be provisioned by `Creation` github workflow.
+
 ## Triggering from local
 
 ### Prerequisites

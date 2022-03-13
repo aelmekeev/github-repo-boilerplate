@@ -1,2 +1,2 @@
-name       = null
+name       = "test-repository"
 visibility = "public"

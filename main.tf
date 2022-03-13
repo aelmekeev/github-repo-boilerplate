@@ -8,6 +8,6 @@ module "this" {
 }
 
 output "repository_url" {
-  value       = one(module.this).repository_url
+  value       = try(one(module.this).repository_url, "")
   description = "URL to the repository on the web"
 }
