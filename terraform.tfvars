@@ -1,2 +1,2 @@
-name       = "boilerplate-test"
+name       = null
 visibility = "public"
