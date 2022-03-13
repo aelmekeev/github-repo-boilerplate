@@ -6,3 +6,8 @@ module "this" {
   name       = var.name
   visibility = var.visibility
 }
+
+output "repository_url" {
+  value       = one(module.this).repository_url
+  description = "URL to the repository on the web"
+}

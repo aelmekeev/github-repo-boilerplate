@@ -1,11 +1,11 @@
-resource "github_branch" "main" {
+data "github_branch" "main" {
   repository = github_repository.this.name
   branch     = "main"
 }
 
 resource "github_branch_default" "this" {
   repository = github_repository.this.name
-  branch     = github_branch.main.branch
+  branch     = data.github_branch.main.branch
 }
 
 resource "github_branch_protection" "this" {
@@ -13,7 +13,7 @@ resource "github_branch_protection" "this" {
   depends_on = [github_repository_file.this]
 
   repository_id = github_repository.this.node_id
-  pattern       = github_branch.main.branch
+  pattern       = data.github_branch.main.branch
 
   enforce_admins = true
 
