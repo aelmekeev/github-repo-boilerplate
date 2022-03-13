@@ -1,0 +1,24 @@
+name: Creation
+
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'terraform.tfvars'
+
+jobs:
+  validate_job:
+    name: Creation
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+      - name: Terraform init
+        run: terraform init
+      - name: Terraform apply
+        run: GITHUB_TOKEN=${{secrets.PUBLIC_GITHUB_TOKEN}} terraform apply -auto-approve
