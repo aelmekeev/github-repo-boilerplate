@@ -1,8 +1,8 @@
-# module "this" {
-#   count = var.name == null ? 0 : 1
+module "this" {
+  count = var.name == null ? 0 : 1
 
-#   source = "./boilerplate"
+  source = "./boilerplate"
 
-#   name       = var.name
-#   visibility = var.visibility
-# }
+  name       = var.name
+  visibility = var.visibility
+}
